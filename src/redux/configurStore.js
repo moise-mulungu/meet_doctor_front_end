@@ -7,6 +7,8 @@ const rootReducer = combineReducers({
   User: UserReducer,
 });
 
-
+const store = createStore(
+  rootReducer, applyMiddleware(thunk, logger),
+);
 
 export default store;
