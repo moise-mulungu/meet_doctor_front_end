@@ -35,8 +35,7 @@ export const success = (user) => ({
     switch (action.type) {
       case LOGIN_USER:
         return { data: action.user, status: 'Loged In successfully' };
-        case SINGUP_USER:
-          return {data: action.user, status:'Register successfully' }
+        
         default:
         return state;
     }
