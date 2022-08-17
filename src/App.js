@@ -1,18 +1,25 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { Component } from 'react';
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginPage from './Pages/loginPage';
+//import Registration from './Pages/Registrations';
+import SignupPage from './Pages/signupPage';
+import MainPage from './Pages/mainPage';
 
-const App = () => {
-  const dispatch = useDispatch();
 
+export default class App extends Component{
+ 
+  render(){
   return (
     <Router>
       <Routes>
-        <Route path="log-in" element={<LoginPage />} />
+        <Route path="/log_in" element={<LoginPage />} />
+        <Route path="/sign_up" element={<SignupPage />} />
+        <Route path="/main" element={<MainPage />} />
+     
         </Routes>
     </Router>
   );
+  }
 };
-
-export default App;
