@@ -34,12 +34,7 @@ export const success = (user) => ({
   };
 
   
-  export const registerUser = (data) => async (dispatch) => {
-    fetch('http://127.0.0.1:3000/v1/users', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+
         
 
       },
