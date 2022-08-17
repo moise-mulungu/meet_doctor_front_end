@@ -1,14 +1,13 @@
 const LOGIN_USER= 'MeetDoctorFrontEnd/User/LOGIN_USER';
 
-const initialState = { status: "status null", data: [] };
 
+
+const initialState = { status: "status null", data: [] };
 
 export const success = (user) => ({
     type: LOGIN_USER,
     payload: user,
   });
-
-
 
   export const loginUser = (data) => async (dispatch) => {
     fetch('http://127.0.0.1:3000/v1/users', {
@@ -27,10 +26,8 @@ export const success = (user) => ({
          console.log(item.username, data.username)
           }} )
          }).catch((error) => { throw error; });
-  
   };
 
-  
   const UserReducer = (state = initialState, action) => {
     switch (action.type) {
       case LOGIN_USER:
