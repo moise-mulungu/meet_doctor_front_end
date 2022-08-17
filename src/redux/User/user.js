@@ -34,20 +34,6 @@ export const success = (user) => ({
   };
 
   
-
-        
-
-      },
-      body: JSON.stringify({username: data.username}),
-      
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        dispatch(registerSuccess(res));
-         })
-      .catch((error) => { throw error; });
-  
-  };
   const UserReducer = (state = initialState, action) => {
     switch (action.type) {
       case LOGIN_USER:
