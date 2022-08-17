@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../../redux/User/user';
+import { loginUser } from '../../../redux/User/user';
 
-function HomePage(){
+function HomePage() {
   const dispatch = useDispatch();
   return (
     <div className="App">
@@ -17,6 +17,6 @@ function HomePage(){
       </button>
     </div>
   );
-};
+}
 
 export default HomePage;
