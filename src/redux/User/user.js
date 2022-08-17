@@ -28,15 +28,8 @@ export const success = (user) => ({
          res.find(item => { if ( item.username===data.username){
          ( dispatch(success(res) ));
          console.log(item.username, data.username)
-         
-        }
-       
-      }
-
-        )
-       
-         })
-      .catch((error) => { throw error; });
+          }} )
+         }).catch((error) => { throw error; });
   
   };
 
