@@ -1,18 +1,14 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginPage from './Pages/loginPage';
+import LoginPage from './components/Pages/login/LoginPage';
+import MainPage from './components/Pages/main/MainPage';
 
-const App = () => {
-  const dispatch = useDispatch();
-
-  return (
-    <Router>
-      <Routes>
-        <Route path="log-in" element={<LoginPage />} />
-        </Routes>
-    </Router>
-  );
-};
+const App = () => (
+  <Router>
+    <Routes>
+      <Route exact path="login" element={<LoginPage />} />
+      <Route path="*" element={<MainPage />} />
+    </Routes>
+  </Router>
+);
 
 export default App;
