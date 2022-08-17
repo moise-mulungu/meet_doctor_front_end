@@ -1,5 +1,5 @@
 const LOGIN_USER= 'MeetDoctorFrontEnd/User/LOGIN_USER';
-const SINGUP_USER='MeetDoctorFrontEnd/User/SINGUP_USER'
+
 const initialState = { status: "status null", data: [] };
 
 
