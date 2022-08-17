@@ -8,10 +8,7 @@ export const success = (user) => ({
     payload: user,
   });
 
-  export const registerSuccess=(user)=>({
-     type: SINGUP_USER,
-     payload: user,
-  })
+
 
   export const loginUser = (data) => async (dispatch) => {
     fetch('http://127.0.0.1:3000/v1/users', {
