@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import {
-  Route, Routes,
+  Route, Routes, useNavigate,
 } from 'react-router-dom';
 import Sidebar from '../../Sidebar';
 import AddDoctor from '../add_doctor/AddDoctor';
@@ -8,16 +8,16 @@ import Home from '../home/Home';
 import Reserve from '../reserve/Reserve';
 import Reservations from '../reservations/Reservations';
 import DeleteDoctor from '../delete_doctor/DeleteDoctor';
+import { loadStorage } from '../../../storage/storage';
 
 function MainPage() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // const e = 4;
-    // if (e === 4) {
-    //   navigate('/login');
-    // }
-  });
+    if (!loadStorage().length) {
+      navigate('/login');
+    }
+  }, []);
 
   return (
     <div>
