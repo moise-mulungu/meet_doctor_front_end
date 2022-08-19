@@ -1,7 +1,7 @@
 export const loadStorage = () => {
   if (localStorage.getItem('user') === null) {
-    localStorage.setItem('user', JSON.stringify([]));
-    return [];
+    localStorage.setItem('user', JSON.stringify(null));
+    return null;
   }
   return JSON.parse(localStorage.getItem('user'));
 };

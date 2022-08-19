@@ -1,29 +1,38 @@
-const LOGIN_USER = 'MeetDoctorFrontEnd/users/LOGIN_USER';
-const initialState = { status: 'Not Loged in', data: [] };
+import { USER_LOGIN } from '../../url_config';
+import { updateStorage } from '../../storage/storage';
 
-export const success = (user) => ({
+const LOGIN_USER = 'MeetDoctorFrontEnd/users/LOGIN_USER';
+const initialState = { status: 'Not Logged in', data: [] };
+
+export const logUser = (user) => ({
   type: LOGIN_USER,
   user,
 });
 
-export const loginUser = () => async (dispatch) => {
-  fetch('http://127.0.0.1:3000/v1/users', {
+export const loginUser = (username) => async (dispatch) => {
+  const url = `${USER_LOGIN}?username=${username}`;
+  const userRes = await fetch(url, {
     method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
   })
     .then((res) => res.json())
-    .then((res) => {
-      dispatch(success(res));
-    })
-    .catch((error) => { throw error; });
+    .catch((error) => {
+      throw error;
+    });
+  const user = userRes.content.user[0];
+  updateStorage(user);
+  dispatch(logUser(userRes));
 };
 
-const UserReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_USER:
-      return { data: action.user, status: 'Loged In successfully' };
+      return { data: action.user, status: 'Logged In successfully' };
     default:
       return state;
   }
 };
 
-export default UserReducer;
+export default userReducer;

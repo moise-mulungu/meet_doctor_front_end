@@ -14,7 +14,7 @@ function MainPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!loadStorage().length) {
+    if (!loadStorage()) {
       navigate('/login');
     }
   }, []);
