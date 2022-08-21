@@ -21,6 +21,10 @@ const HomePageCtn = styled.div`
     padding: 10px;
     box-shadow: 5px 10px 18px #888888;
   }
+  
+  form{
+    display: flex;
+  }
 
   .login-title {
     align-self: center;
