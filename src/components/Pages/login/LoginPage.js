@@ -22,13 +22,17 @@ const HomePageCtn = styled.div`
     margin-top: 50px;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 5px 5px 75px rgba(136, 136, 136, 0.89);
+    box-shadow: 5px 5px 75px rgba(136, 136, 136, 0.61);
   }
 
   .form_ctn {
-    width: 400px;
+    width: 300px;
     padding-left: 30px;
     padding-right: 50px;
+  }
+
+  .doctor_log_img {
+    width: 150px;
   }
 
   .login_txt {
@@ -40,7 +44,7 @@ const HomePageCtn = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    gap: 150px;
+    gap: 100px;
   }
 
   label {
@@ -50,7 +54,7 @@ const HomePageCtn = styled.div`
   }
 
   .doctor_log_img {
-    width: 500px;
+    width: 400px;
   }
 
   .login-title {
@@ -80,8 +84,8 @@ const HomePageCtn = styled.div`
     cursor: pointer;
     transition: all 300ms linear 0s;
   }
-  
-  .login-button:hover{
+
+  .login-button:hover {
     background-color: var(--green-darker);
   }
 `;
