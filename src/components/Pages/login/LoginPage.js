@@ -7,87 +7,90 @@ import { loadStorage } from '../../../storage/storage';
 import logImgDoc from '../../../images/img_doc_login.jpg';
 
 const HomePageCtn = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  .ctn-card {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-    border: 1px solid #f9efef;
-    margin-top: 50px;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 75px rgba(136, 136, 136, 0.61);
-  }
-
-  .form_ctn {
-    width: 300px;
-    padding-left: 30px;
-    padding-right: 50px;
-  }
-
-  .doctor_log_img {
-    width: 150px;
-  }
-
-  .login_txt {
-    text-align: center;
-    font-size: 1.5rem;
-    color: var(--text-black);
-  }
-
-  form {
+  @media (min-width: 768px) {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 100px;
-  }
 
-  label {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
+    .ctn-card {
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      border: 1px solid #f9efef;
+      margin-top: 50px;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 5px 5px 75px rgba(136, 136, 136, 0.61);
+    }
 
-  .doctor_log_img {
-    width: 400px;
-  }
+    .form_ctn {
+      width: 300px;
+      padding-left: 30px;
+      padding-right: 50px;
+    }
 
-  .login-title {
-    align-self: center;
-    color: var(--green);
-    font-size: 2rem;
-    font-style: italic;
-  }
+    .doctor_log_img {
+      width: 150px;
+    }
 
-  .username_field {
-    height: 50px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+    .login_txt {
+      text-align: center;
+      font-size: 1.5rem;
+      color: var(--text-black);
+    }
 
-  .login-button {
-    background-color: var(--green);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 300ms linear 0s;
-  }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+    }
 
-  .login-button:hover {
-    background-color: var(--green-darker);
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .doctor_log_img {
+      width: 400px;
+    }
+
+    .login-title {
+      align-self: center;
+      color: var(--green);
+      font-size: 2rem;
+      font-style: italic;
+    }
+
+    .username_field {
+      height: 50px;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .login-button {
+      background-color: var(--green);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 300ms linear 0s;
+    }
+
+    .login-button:hover {
+      background-color: var(--green-darker);
+    }
   }
+  
 `;
 
 function LoginPage() {
