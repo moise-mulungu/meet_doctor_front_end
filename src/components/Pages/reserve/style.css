@@ -23,20 +23,19 @@
   width: 73%;
 }
 
-.form input{
-   border: none;
-   border-radius: 8px;
-   padding: 10px;
-   width: 170px;
-}
-.form select{
+.form input {
   border: none;
   border-radius: 8px;
   padding: 10px;
   width: 170px;
 }
 
-
+.form select {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  width: 170px;
+}
 
 .R-Form h3 {
   text-align: center;
@@ -55,11 +54,11 @@ label {
   text-align: center;
   padding: 12px;
   width: 80px;
-  border:none;
+  border: none;
   border-radius: 10px;
 }
 
-  .btn:hover {
+.btn:hover {
   background-color: cornflowerblue;
   color: #000;
   cursor: pointer;
