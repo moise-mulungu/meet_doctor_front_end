@@ -21,35 +21,35 @@ const ReservationForm = () => {
       <div className='R-Form'>
           
           <div className='form  form-group'>
-            <h3>Create your appointment</h3>
-                
-            <form onSubmit={handleSubmit(onSubmit)}>
-
-              {  /* register your input into the hook by invoking the "register" function */}
-                <label> Date </label>
-                
-                   <input {...register('datetime')} type="date" className='form-control'  />
+             <h3>Create your appointment</h3>
+              
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                    
+                        {  /* register your input into the hook by invoking the "register" function */}
+                         
+                            <lable className="frst-L">Date
+                            <lable >City</lable> 
+                            <lable >Select a doctor</lable> 
+                            </lable>
+                            
+                                    <input {...register('datetime')} type="date"   />              
+                                <input {...register('city')} type="text" placeholder="City" className='city'/>
+                                
+                                <select {...register('doctor_id')} >
+                          
+                                  {data.map((doctor) => (
+                                  <option key={doctor.id} value={doctor.id}>
+                                  {doctor.name}
+                                  </option>
+                                ))}
+                            </select>
                   
-                  <label> City</label>
-                  
-                   <input {...register('city')} type="text" placeholder="City" className='form-control'/>
-                 
-                  <label>  Select a Doctor</label>
-                 
-                   <select {...register('doctor_id')} className='form-control'>
                 
-                   {data.map((doctor) => (
-                    <option key={doctor.id} value={doctor.id}>
-                        {doctor.name}
-                        </option>
-                      ))}
-                   </select>
-                 
-               
-                   <button className='btn '>Book</button>
-                  
-            </form>
-          </div>
+                    <button className='btn '>Book</button>
+                    
+                 </form>
+             </div>
+          
        </div>
    </div>
   );
