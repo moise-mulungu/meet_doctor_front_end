@@ -27,15 +27,15 @@ const ReservationForm = () => {
 
               {  /* register your input into the hook by invoking the "register" function */}
                 <label> Date </label>
-                <div className='mb-2'>
+                
                    <input {...register('datetime')} type="date" className='form-control'  />
-                  </div>
+                  
                   <label> City</label>
-                  <div  className='mb-2'>
+                  
                    <input {...register('city')} type="text" placeholder="City" className='form-control'/>
-                  </div>
+                 
                   <label>  Select a Doctor</label>
-                  <div  className='mb-2'>
+                 
                    <select {...register('doctor_id')} className='form-control'>
                 
                    {data.map((doctor) => (
@@ -44,10 +44,10 @@ const ReservationForm = () => {
                         </option>
                       ))}
                    </select>
-                   </div>
-                  <div  className='mb-2'>
-                   <button className='btn btn-primary btn-block'>Reserve</button>
-                  </div>
+                 
+               
+                   <button className='btn '>Book</button>
+                  
             </form>
           </div>
        </div>

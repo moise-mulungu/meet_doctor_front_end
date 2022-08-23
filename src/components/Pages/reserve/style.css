@@ -20,24 +20,48 @@
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
   transition: all 0.3s;
+  width: 70%;
 }
 
-.R-Form .form-control:focus {
-  border-color: #167bff;
-  box-shadow: none;
+.form input{
+   border: none;
+   border-radius: 8px;
+   padding: 10px;
+   width: 170px;
 }
+.form select{
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  width: 170px;
+}
+
+
 
 .R-Form h3 {
   text-align: center;
   margin: 0;
   line-height: 1;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 label {
   font-weight: 500;
+  padding: 10px;
 }
 
 .btn {
-  width: 100%;
+  margin-left: 10px;
+  text-align: center;
+  padding: 12px;
+  width: 80px;
+  border:none;
+  border-radius: 10px;
+}
+
+  .btn:hover {
+  background-color: cornflowerblue;
+  color: #000;
+  cursor: pointer;
+  border: none;
 }

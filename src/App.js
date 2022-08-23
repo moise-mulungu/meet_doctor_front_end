@@ -6,7 +6,6 @@ import MainPage from './components/Pages/main/MainPage';
 import ReservationForm from './components/Pages/reserve/Reserve';
 import { fetchDoctors } from './redux/doctors/DoctorList';
 
-
 import './App.css';
 
 const App = () => {
@@ -21,7 +20,7 @@ const App = () => {
       <Routes>
         <Route exact path="login" element={<LoginPage />} />
         <Route path="/reserve" element={<ReservationForm />} />
-        
+
         <Route path="*" element={<MainPage />} />
       </Routes>
     </Router>
