@@ -1,11 +1,11 @@
 import { loadStorage } from '../../storage/storage';
 
-const FETCH_DOCTOR = 'HotelAgentFrontEnd/MostRecent/FETCH_DOCTOR';
+const FETCH_DOCTOR = 'DotortFrontEnd/MostRecent/FETCH_DOCTOR';
 const initialState = { status: 'Not Fetched', data: [] };
 
 export const success = (mostRecent) => ({
   type: FETCH_DOCTOR,
-  mostRecent,
+  payload: mostRecent,
 });
 
 export const fetchDoctors = () => async (dispatch) => {
