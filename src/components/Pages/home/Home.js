@@ -1,11 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
+import Doctors from './Doctors';
 
-function Home() {
-  return (
-    <div className="Home">
-      Home
-    </div>
-  );
-}
+const HomeCtn = styled.div`
+  width: max-content;
+`;
+
+const Home = () => (
+  <HomeCtn>
+    <Doctors />
+  </HomeCtn>
+);
 
 export default Home;
