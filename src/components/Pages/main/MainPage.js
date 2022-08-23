@@ -6,7 +6,7 @@ import Sidebar from '../../Sidebar';
 import AddDoctor from '../add_doctor/AddDoctor';
 import Home from '../home/Home';
 import Reserve from '../reserve/Reserve';
-import Reservations from '../reservations/Reservations';
+import Reservations from '../reservations/Reservation';
 import DeleteDoctor from '../delete_doctor/DeleteDoctor';
 import { loadStorage } from '../../../storage/storage';
 

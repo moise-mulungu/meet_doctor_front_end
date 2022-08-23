@@ -3,11 +3,11 @@ import { applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import userReducer from './users/user';
-import reservationReducer from './reservations/reservation';
+import fetchReservationReducer from './reservations/ReservationList';
 
 const reducer = combineReducers({
   user: userReducer,
-  reservation: reservationReducer
+  reservation: fetchReservationReducer,
 });
 
 const store = configureStore({ reducer }, applyMiddleware(thunk, logger));

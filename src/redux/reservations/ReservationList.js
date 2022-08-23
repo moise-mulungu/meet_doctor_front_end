@@ -1,4 +1,4 @@
-import { loadStorage } from "../../../storage/storage";
+import { loadStorage } from "../../storage/storage";
 
 const FETCH_RESERVATIONS = 'FETCH_RESERVATIONS';
 const initialState = {
@@ -49,7 +49,7 @@ export const updateReservation = (reservation) => {
       return dispatch(fetchReservationsFailure('No user found'));
     }
     return fetch(`http://localhost:3000/reservations/${user.id}`, {
-      method: 'PUT',
+      method: 'GET',
       body: JSON.stringify(reservation)
     }).then(response => response.json())
       .then(reservations => {
