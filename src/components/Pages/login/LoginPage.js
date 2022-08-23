@@ -103,7 +103,7 @@ function LoginPage() {
 
   useEffect(() => {
     if (loadStorage()) {
-      navigate('/home');
+      navigate('/');
     }
   }, [user]);
 
