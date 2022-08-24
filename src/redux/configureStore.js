@@ -3,10 +3,12 @@ import { applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import userReducer from './users/user';
+import doctorFetchReducer from './doctors/DoctorList';
 import fetchReservationReducer from './reservations/ReservationList';
 
 const reducer = combineReducers({
   user: userReducer,
+  MostRecent: doctorFetchReducer,
   reservation: fetchReservationReducer,
 });
 

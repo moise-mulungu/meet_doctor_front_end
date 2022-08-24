@@ -7,7 +7,7 @@ const ListAllReservations = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const myReservation = useSelector((state) => state.reservation);
-  const doctors = useSelector((state) => state.doctor);
+  const doctor = useSelector((state) => state.MostRecent);
   
 
   useEffect(() => {
