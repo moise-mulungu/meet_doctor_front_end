@@ -20,6 +20,7 @@
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
   transition: all 0.3s;
+
 }
 
 .form input {
@@ -62,7 +63,7 @@
   margin-left: 10px;
   text-align: center;
   padding: 12px;
-  width: 80px;
+  width: 100px;
   border: none;
   border-radius: 10px;
 }
