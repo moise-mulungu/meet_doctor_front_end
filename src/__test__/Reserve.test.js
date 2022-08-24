@@ -3,8 +3,7 @@ import { Provider } from 'react-redux';
 
 import { BrowserRouter } from 'react-router-dom';
 import store from '../redux/configureStore';
-import Reserve from '../components/Pages/reserve/Reserve'
-
+import Reserve from '../components/Pages/reserve/Reserve';
 
 it('Check if Reserve page renders correctly', () => {
   const tree = renderer.create(
