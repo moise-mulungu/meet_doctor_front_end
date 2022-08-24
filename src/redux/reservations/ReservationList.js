@@ -29,7 +29,6 @@ export const fetchReservationsAsync = () => {
   console.log('fetchReservationsAsync');
   return (dispatch) => {
     const user = loadStorage();
-    console.log(`http://127.0.0.1:3000/v1/users/${user.id}/reservations`)
     if (user === null) {
       return dispatch(fetchReservationsFailure('No user found'));
     }
@@ -48,11 +47,11 @@ export const fetchReservationsAsync = () => {
 
 export const updateReservation = (reservation) => {
   return (dispatch) => {
-    const userId = loadStorage();
-    if (userId === null) {
-      return dispatch(fetchReservationsFailure('No userId found'));
+    const user = loadStorage();
+    if (user === null) {
+      return dispatch(fetchReservationsFailure('No user found'));
     }
-    return fetch(`http://127.0.0.1:3000/v1/users/${userId.id}/reservations`, {
+    return fetch(`http://127.0.0.1:3000/v1/users/${user.id}/reservations`, {
       method: 'GET',
       body: JSON.stringify(reservation)
     }).then(response => response.json())

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchReservations, fetchReservationsSuccess, fetchReservationsAsync, fetchReservationsFailure, updateReservation} from '../../../redux/reservations/ReservationList';
+import css from './style.css';
 
 const ListAllReservations = () => {
 
@@ -20,7 +21,7 @@ const ListAllReservations = () => {
 
   return (
     <section className="reservations-container">
-      <h1>Reservations</h1>
+      <h1>All Reservations</h1>
       <table className="reservations-table">
         <thead>
           <tr>
@@ -32,11 +33,13 @@ const ListAllReservations = () => {
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="reservations-body">
           {user.data.map((reservation) => (
             <tr key={reservation.id}>
               <td>{reservation.city}</td>
               <td>{reservation.datetime}</td>
+              <td>{reservation.doctor}</td>
+              <td>{reservation.bill}</td>
               <td>
                 <button onClick={() => handleDelete(reservation.id)}>Cancel</button>
               </td>
@@ -45,7 +48,6 @@ const ListAllReservations = () => {
           
         </tbody>
       </table>
-      
     </section>
   );
 };
