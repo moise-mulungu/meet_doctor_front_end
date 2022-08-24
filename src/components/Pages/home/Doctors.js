@@ -5,10 +5,12 @@ import Doctor from './Doctor';
 import { getDoctors } from '../../../redux/doctors/doctor';
 
 const DoctorsCtn = styled.div`
-  width: max-content;
+  width: 100%;
   margin-top: 30px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   .doc-ctn{
     width: fit-content;
   }

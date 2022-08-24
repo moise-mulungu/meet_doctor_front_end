@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Doctors from './Doctors';
 
 const HomeCtn = styled.div`
-  width: max-content;
+  //width: max-content;
 `;
 
 const Home = () => (

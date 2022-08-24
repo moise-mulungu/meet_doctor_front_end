@@ -20,7 +20,7 @@ const MainPageCtn = styled.div`
     
     .right{
       background: var(--little-grey);
-      flex-grow: 1;
+      width: calc(100% - 200px);
     }
   }
 `;
