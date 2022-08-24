@@ -56,7 +56,9 @@ export const updateReservation = (reservation) => {
       body: JSON.stringify(reservation)
     }).then(response => response.json())
       .then(reservations => {
+        console.log('reserve', reservations);
         dispatch(fetchReservationsSuccess(reservations));
+
       }).catch(error => {
         dispatch(fetchReservationsFailure(error));
       }

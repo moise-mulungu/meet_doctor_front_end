@@ -4,10 +4,10 @@ import { fetchReservations, fetchReservationsSuccess, fetchReservationsAsync, fe
 import css from './style.css';
 
 const ListAllReservations = () => {
-
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  const { data } = useSelector((state) => state.reservation);
+  const data = useSelector((state) => state.reservation.reservations);
+  console.log(data.reservations);
   // const doctor = useSelector((state) => state.MostRecent);
   
 
@@ -19,6 +19,7 @@ const ListAllReservations = () => {
     dispatch(updateReservation({ id, status: 'cancelled' }));
   }
 
+
   return (
     <section className="reservations-container">
       <h1>All Reservations</h1>
@@ -26,7 +27,6 @@ const ListAllReservations = () => {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Doctor</th>
             <th>City</th>
             <th>Bill</th>
             <th>Date</th>
@@ -34,17 +34,26 @@ const ListAllReservations = () => {
           </tr>
         </thead>
         <tbody className="reservations-body">
-          {user.data.map((reservation) => (
-            <tr key={reservation.id}>
-              <td>{reservation.city}</td>
-              <td>{reservation.datetime}</td>
-              <td>{reservation.doctor}</td>
-              <td>{reservation.bill}</td>
-              <td>
-                <button onClick={() => handleDelete(reservation.id)}>Cancel</button>
-              </td>
-            </tr>
-          ))}
+          {
+            data.length !== 0 ? (
+              data.map((reservation) => (
+                <tr key={reservation.id}>
+                  <td>{reservation.doctor}</td>
+                  <td>{reservation.city}</td>
+                  <td>{reservation.bill}</td>
+                  <td>{reservation.datetime}</td>
+                  <td>
+                    <button onClick={() => handleDelete(reservation.id)} className="delete-btn">Delete</button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td>No reservations found</td>
+              </tr>
+            )
+          }
+
           
         </tbody>
       </table>
