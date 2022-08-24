@@ -6,8 +6,8 @@ const ListAllReservations = () => {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  const myReservation = useSelector((state) => state.reservation);
-  const doctor = useSelector((state) => state.MostRecent);
+  const { data } = useSelector((state) => state.reservation);
+  // const doctor = useSelector((state) => state.MostRecent);
   
 
   useEffect(() => {
@@ -33,12 +33,9 @@ const ListAllReservations = () => {
           </tr>
         </thead>
         <tbody>
-          {myReservation.reservations.map((reservation) => (
+          {user.data.map((reservation) => (
             <tr key={reservation.id}>
-              <td>{reservation.user_id}</td>
-              <td>{reservation.doctor_id.name}</td>
               <td>{reservation.city}</td>
-              <td>{reservation.bill}</td>
               <td>{reservation.datetime}</td>
               <td>
                 <button onClick={() => handleDelete(reservation.id)}>Cancel</button>
