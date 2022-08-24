@@ -9,6 +9,7 @@ const DoctorsCtn = styled.div`
   margin-top: 30px;
   display: flex;
   flex-direction: row;
+  gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
   .doc-ctn{
