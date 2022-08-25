@@ -19,30 +19,24 @@ const DoctorDetailsCtn = styled.div`
 `;
 
 const DoctorDetails = (props) => {
-  let { detailsOpen } = props;
+  const { detailsOpen } = props;
   const { doctor } = props;
+  const docDetails = JSON.parse(doctor);
   // const [detailsWin] = useState(detailsOpen);
-
-  const closeWindow = () => {
-    detailsOpen = false;
-  };
 
   return (
     <DoctorDetailsCtn
       detailsOpen={detailsOpen}
     >
-      <h5
-        className="close-txt"
-        onClick={closeWindow}
-        onKeyDown={closeWindow}
-        role="presentation"
-      >
-        Close
-      </h5>
+
       <img alt="doctor" className="doc-img" />
-      <h5>
-        {doctor}
-      </h5>
+      <div className="doc-info-ctn">
+        <h5>
+          {
+            docDetails && docDetails.name
+          }
+        </h5>
+      </div>
     </DoctorDetailsCtn>
   );
 };
