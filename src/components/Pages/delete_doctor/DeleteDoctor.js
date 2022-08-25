@@ -4,11 +4,117 @@ import styled from 'styled-components';
 import { getUserDoctors, removeDoctor } from '../../../redux/doctors/doctor';
 
 const DeleteDoctorCtn = styled.div`
-  .rem-ctn{
-    visibility: visible;
+
+  .doc-list-ctn {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    gap: 30px;
   }
-  .conf-ctn{
-    visibility: hidden;
+
+  .doc-ctn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .doc-name {
+    margin: 10px 0;
+    text-align: center;
+    font-family: "Ubuntu Light";
+    font-size: 1rem;
+  }
+
+  .doc-speciality {
+    margin: 10px 0;
+    text-align: center;
+    font-family: "Ubuntu Thin";
+    font-size: 1rem;
+  }
+
+  .img-ctn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    align-self: center;
+    width: 150px;
+    height: 150px;
+  }
+
+  .doc-img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+  }
+
+  .img-bg {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 100%;
+    background: var(--img-background);
+  }
+
+  .but-action-ctn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .conf-ctn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .rem-ctn {
+    display: block;
+    width: 100px;
+    height: 100%;
+    color: white;
+    background: var(--red);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 300ms linear 0s;
+    :hover{
+      background: var(--red-darker);
+    }
+  }
+
+  .cancel-but {
+    margin-right: 5px;
+    color: white;
+    background: var(--gray-simple);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 300ms linear 0s;
+    :hover{
+      background: var(--gray-darker);
+    }
+  }
+
+  .confirm-but {
+    margin-left: 5px;
+    color: white;
+    background: #f44d4d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 300ms linear 0s;
+    :hover{
+      background: var(--red-darker);
+    }
+  }
+
+  .conf-ctn {
+    display: none;
   }
 `;
 
@@ -22,15 +128,12 @@ function DeleteDoctor() {
   const toggleVisibility = (e) => {
     removeButton = document.getElementById(`remove${e.currentTarget.dataset.index}`);
     confirmDiv = document.getElementById(`but-confirm${e.currentTarget.dataset.index}`);
-    if (removeButton.style.visibility === 'visible') {
-      console.log('visible');
-      removeButton.style.visibility = 'hidden';
-      confirmDiv.style.visibility = 'visible';
+    if (removeButton.style.display === 'block') {
+      removeButton.style.display = 'none';
+      confirmDiv.style.display = 'block';
     } else {
-      console.log(removeButton.style.visibility);
-      console.log('invisible');
-      removeButton.style.visibility = 'visible';
-      confirmDiv.style.visibility = 'hidden';
+      removeButton.style.display = 'block';
+      confirmDiv.style.display = 'none';
     }
   };
 
@@ -41,11 +144,6 @@ function DeleteDoctor() {
   const cancelDoc = (e) => {
     toggleVisibility(e);
   };
-
-  // const confirmDoc = (e) => {
-  //   const id = e.currentTarget.dataset.index;
-  //   dispatch(removeDoctor(id));
-  // };
 
   useEffect(() => {
     dispatch(getUserDoctors());
@@ -59,17 +157,17 @@ function DeleteDoctor() {
           {
             doctors.map((doc) => (
               <div className="doc-ctn" key={doc.id}>
-                <div className="doc-img-ctn">
+                <div className="img-ctn">
                   <div className="img-bg" />
                   {/* <img /> */}
                 </div>
-                <h5>{doc.name}</h5>
-                <h5>{doc.speciality}</h5>
+                <h5 className="doc-name">{doc.name}</h5>
+                <h5 className="doc-speciality">{doc.speciality}</h5>
                 <div className="but-action-ctn">
                   <button id={`remove${doc.id}`} data-index={doc.id} className="rem-ctn" type="button" onClick={removeDoc}>Remove</button>
                   <div id={`but-confirm${doc.id}`} data-index={doc.id} className="conf-ctn">
-                    <button id={`cancel${doc.id}`} data-index={doc.id} type="button" onClick={cancelDoc}>Cancel</button>
-                    <button id={`confirm${doc.id}`} data-index={doc.id} type="button" onClick={() => dispatch(removeDoctor(doc.id))}>Confirm</button>
+                    <button id={`cancel${doc.id}`} data-index={doc.id} className="cancel-but" type="button" onClick={cancelDoc}>Cancel</button>
+                    <button id={`confirm${doc.id}`} data-index={doc.id} className="confirm-but" type="button" onClick={() => dispatch(removeDoctor(doc.id))}>Confirm</button>
                   </div>
                 </div>
               </div>

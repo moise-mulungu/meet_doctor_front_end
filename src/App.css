@@ -7,6 +7,9 @@
   --img-background: #ddd;
   --little-grey-hover: rgba(227, 228, 227, 0.51);
   --red: #f44d4d;
+  --red-darker: #cb3a3a;
+  --gray-simple: #757474;
+  --gray-darker: #595656
 }
 
 .App {
