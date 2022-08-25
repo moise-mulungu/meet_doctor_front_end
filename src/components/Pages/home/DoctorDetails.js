@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const DoctorDetailsCtn = styled.div`
   @media (min-width: 768px) {
@@ -80,8 +81,13 @@ const DoctorDetailsCtn = styled.div`
 
 const DoctorDetails = (props) => {
   const { detailsOpen } = props;
+  const navigate = useNavigate();
   const { doctor } = props;
   const docDetails = JSON.parse(doctor);
+
+  const openReserve = () => {
+    navigate('/reservation');
+  };
 
   return (
     <DoctorDetailsCtn
@@ -119,7 +125,7 @@ const DoctorDetails = (props) => {
               <h5>{docDetails.email}</h5>
             </div>
           </div>
-          <button className="reserve-btn" type="button">Reserve</button>
+          <button className="reserve-btn" type="button" onClick={openReserve}>Reserve</button>
         </div>
         )
         }
