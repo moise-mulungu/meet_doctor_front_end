@@ -8,12 +8,37 @@ const DoctorDetailsCtn = styled.div`
     position: fixed;
     top: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.17);
+    background-color: var(--white-sobber);
     z-index: 1;
-    border: 3px solid #73AD21;
     transform: translateX(${(props) => (props.detailsOpen ? 0 : 400)}px);
     visibility: ${(props) => (props.detailsOpen ? 'visible' : 'hidden')};
     transition: 200ms ease-in-out 0s;
+
+    .doc-info-ctn {
+      display: flex;
+      justify-content: center;
+    }
+
+    .doc-info-tbl {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .doc-info-row {
+      display: flex;
+      justify-content: space-between;
+      background: var(--white-sobber);
+      padding: 0 30px;
+      font-family: "Ubuntu Light";
+      color: var(--text-black);
+      font-size: 1rem;
+    }
+
+    .white {
+      background: rgb(249, 255, 247);
+    }
   }
 `;
 
@@ -26,15 +51,38 @@ const DoctorDetails = (props) => {
     <DoctorDetailsCtn
       detailsOpen={detailsOpen}
     >
+      {
+        docDetails
+        && (
+        <div className="doc-info-ctn">
+          {/* Image part */}
 
-      <img alt="doctor" className="doc-img" />
-      <div className="doc-info-ctn">
-        <h5>
-          {
-            docDetails && docDetails.name
-          }
-        </h5>
-      </div>
+          <div className="doc-info-tbl">
+            <div className="doc-info-row">
+              <h5>Speciality </h5>
+              <h5>{docDetails.speciality}</h5>
+            </div>
+            <div className="doc-info-row white">
+              <h5>Cost </h5>
+              <h5>
+                {docDetails.bill}
+                {' '}
+                $/h
+              </h5>
+            </div>
+            <div className="doc-info-row">
+              <h5>Location </h5>
+              <h5>{docDetails.location}</h5>
+            </div>
+            <div className="doc-info-row white">
+              <h5>Email </h5>
+              <h5>{docDetails.email}</h5>
+            </div>
+          </div>
+        </div>
+        )
+        }
+
     </DoctorDetailsCtn>
   );
 };
@@ -43,6 +91,11 @@ DoctorDetails.propTypes = {
   detailsOpen: PropTypes.bool.isRequired,
   doctor: PropTypes.shape({
     name: PropTypes.string,
+    speciality: PropTypes.string,
+    bill: PropTypes.string,
+    image: PropTypes.string,
+    location: PropTypes.string,
+    email: PropTypes.string,
   }).isRequired,
 };
 
