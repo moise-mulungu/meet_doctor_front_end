@@ -65,7 +65,7 @@ const Doctor = (props) => {
     <DoctorCtn>
       <div className="img-ctn">
         <div className="img-bg" />
-        <img alt="doctor" className="doc-img" />
+        {/* <img alt="doctor" className="doc-img" /> */}
       </div>
       <h5 className="doc-name">{name}</h5>
       <h5 className="doc-speciality">{speciality}</h5>
