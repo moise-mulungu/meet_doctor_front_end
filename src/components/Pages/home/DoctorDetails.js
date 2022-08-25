@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-// import { useState } from 'react';
 
 const DoctorDetailsCtn = styled.div`
   @media (min-width: 768px) {
@@ -22,7 +21,6 @@ const DoctorDetails = (props) => {
   const { detailsOpen } = props;
   const { doctor } = props;
   const docDetails = JSON.parse(doctor);
-  // const [detailsWin] = useState(detailsOpen);
 
   return (
     <DoctorDetailsCtn
