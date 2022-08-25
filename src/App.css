@@ -1,3 +1,14 @@
+:root {
+  --green: #4caf50;
+  --green-darker: #337836;
+  --text-black: rgba(38, 36, 36, 0.92);
+  --white-sobber: rgb(238, 245, 237);
+  --little-grey: #fbfff9;
+  --img-background: #ddd;
+  --little-grey-hover: rgba(227, 228, 227, 0.51);
+  --red: #f44d4d;
+}
+
 .App {
   height: 100vh;
 }
