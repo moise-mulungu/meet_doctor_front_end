@@ -19,6 +19,28 @@ const DoctorDetailsCtn = styled.div`
       flex-direction: column;
       justify-content: center;
     }
+    
+    .img-ctn{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 50px;
+      align-self: center;
+      width: 150px;
+      height: 150px;
+    }
+
+    .img-bg {
+      width: 150px;
+      height: 150px;
+      margin: auto;
+      border-radius: 100%;
+      background: var(--img-background);
+    }
+    
+    .doc-name{
+      align-self: center;
+    }
 
     .doc-info-tbl {
       width: 100%;
@@ -74,7 +96,7 @@ const DoctorDetails = (props) => {
             <div className="img-bg" />
             {/* <img alt="doctor" className="doc-img" /> */}
           </div>
-          <h5>{docDetails.name}</h5>
+          <h5 className="doc-name">{docDetails.name}</h5>
           <div className="doc-info-tbl">
             <div className="doc-info-row">
               <h5>Speciality </h5>
