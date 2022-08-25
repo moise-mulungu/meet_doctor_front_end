@@ -16,6 +16,7 @@ const DoctorDetailsCtn = styled.div`
 
     .doc-info-ctn {
       display: flex;
+      flex-direction: column;
       justify-content: center;
     }
 
@@ -39,6 +40,19 @@ const DoctorDetailsCtn = styled.div`
     .white {
       background: rgb(249, 255, 247);
     }
+    
+    .reserve-btn{
+      background-color: var(--green);
+      color: white;
+      align-self: center;
+      padding: 14px 20px;
+      width: 200px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 300ms linear 0s;
+      margin-top: 50px;
+    }
   }
 `;
 
@@ -56,7 +70,11 @@ const DoctorDetails = (props) => {
         && (
         <div className="doc-info-ctn">
           {/* Image part */}
-
+          <div className="img-ctn">
+            <div className="img-bg" />
+            {/* <img alt="doctor" className="doc-img" /> */}
+          </div>
+          <h5>{docDetails.name}</h5>
           <div className="doc-info-tbl">
             <div className="doc-info-row">
               <h5>Speciality </h5>
@@ -79,6 +97,7 @@ const DoctorDetails = (props) => {
               <h5>{docDetails.email}</h5>
             </div>
           </div>
+          <button className="reserve-btn" type="button">Reserve</button>
         </div>
         )
         }
