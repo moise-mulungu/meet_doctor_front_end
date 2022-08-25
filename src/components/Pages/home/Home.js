@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Doctors from './Doctors';
-import DoctorDetails from '../../DoctorDetails';
 
 const HomeCtn = styled.div`
   position: relative;
@@ -12,7 +11,6 @@ const HomeCtn = styled.div`
 const Home = () => (
   <HomeCtn>
     <Doctors />
-    <DoctorDetails />
   </HomeCtn>
 );
 
