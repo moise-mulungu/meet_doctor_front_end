@@ -3,14 +3,14 @@ import { loadStorage } from '../../storage/storage';
 const RESERVAIONT_DOCTOR = 'MeetDoctorFrontEnd/User/RESERVAIONT_DOCTOR';
 const initialState = { status: 'status null', data: [] };
 
-export const registerSuccess = (reserave) => ({
+export const registerSuccess = (reserve) => ({
   type: RESERVAIONT_DOCTOR,
-  payload: reserave,
+  payload: reserve,
 });
 
 export const createReservation = (data) => async (dispatch) => {
-  const userId = loadStorage();
-  fetch(`http://127.0.0.1:3000/v1/users/${userId.id}/reservations`, {
+  const user = loadStorage();
+  fetch(`http://127.0.0.1:3000/v1/users/${user.id}/reservations`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -27,7 +27,7 @@ export const createReservation = (data) => async (dispatch) => {
 const ReservationReducer = (state = initialState, action) => {
   switch (action.type) {
     case RESERVAIONT_DOCTOR:
-      return { data: action.reserave, status: 'Reserved successfully' };
+      return { data: action.reserve, status: 'Reserved successfully' };
     default:
       return state;
   }

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check if Reserve page renders correctly 1`] = `
+<div
+  className="body"
+>
+  <div
+    className="R-Form"
+  >
+    <div
+      className="form  form-group"
+    >
+      <h3>
+        Book  your appointment
+      </h3>
+      <form
+        onSubmit={[Function]}
+      >
+        <lable
+          className="frst-L"
+        >
+          Date
+          <lable>
+            City
+          </lable>
+          <lable>
+            Select a doctor
+          </lable>
+        </lable>
+        <input
+          name="datetime"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="date"
+        />
+        <input
+          className="city"
+          name="city"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="City"
+          type="text"
+        />
+        <select
+          name="doctor_id"
+          onBlur={[Function]}
+          onChange={[Function]}
+        />
+        <button
+          className="btn "
+        >
+          Book Now
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;

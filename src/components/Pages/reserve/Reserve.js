@@ -21,7 +21,7 @@ const ReservationForm = () => {
       <div className='R-Form'>
           
           <div className='form  form-group'>
-             <h3>Create your appointment</h3>
+             <h3>Book  your appointment</h3>
               
                   <form onSubmit={handleSubmit(onSubmit)}>
                     
@@ -45,7 +45,7 @@ const ReservationForm = () => {
                             </select>
                   
                 
-                    <button className='btn '>Book</button>
+                    <button className='btn '>Book Now</button>
                     
                  </form>
              </div>
