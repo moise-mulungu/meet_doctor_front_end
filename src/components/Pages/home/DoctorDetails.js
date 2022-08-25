@@ -86,7 +86,7 @@ const DoctorDetails = (props) => {
   const docDetails = JSON.parse(doctor);
 
   const openReserve = () => {
-    navigate('/reservation');
+    navigate('/reserve');
   };
 
   return (
