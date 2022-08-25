@@ -26,7 +26,6 @@ export const fetchReservationsFailure = (error) => {
 }
 
 export const fetchReservationsAsync = () => {
-  console.log('fetchReservationsAsync');
   return (dispatch) => {
     const user = loadStorage();
     if (user === null) {
@@ -36,10 +35,8 @@ export const fetchReservationsAsync = () => {
       .then(response => response.json())
       .then(reservations => {
         dispatch(fetchReservationsSuccess(reservations));
-        console.log(reservations);
       }).catch(error => {
         dispatch(fetchReservationsFailure(error));
-        console.log(error);
       }
       );
   }
@@ -56,7 +53,6 @@ export const updateReservation = (reservation) => {
       body: JSON.stringify(reservation)
     }).then(response => response.json())
       .then(reservations => {
-        console.log('reserve', reservations);
         dispatch(fetchReservationsSuccess(reservations));
 
       }).catch(error => {
