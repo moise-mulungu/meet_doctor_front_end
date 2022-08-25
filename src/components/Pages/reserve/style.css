@@ -1,0 +1,75 @@
+
+.body {
+  background-color: rgb(205, 233, 161);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.R-Form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.form input {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  width: 170px;
+}
+
+.form .city {
+  margin-left: 10px;
+  padding: 12px;
+}
+
+.form select {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  width: 170px;
+  margin-left: 10px;
+}
+
+.R-Form h3 {
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 30px;
+}
+
+.frst-L {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  margin-right: 100px;
+  padding: 0 30px;
+  font-weight: 500;
+}
+
+.btn {
+  margin-left: 10px;
+  text-align: center;
+  padding: 12px;
+  width: 80px;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-color: cornflowerblue;
+  color: #000;
+  cursor: pointer;
+  border: none;
+}

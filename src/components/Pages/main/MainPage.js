@@ -3,13 +3,15 @@ import {
   Route, Routes, useNavigate,
 } from 'react-router-dom';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import Sidebar from '../../Sidebar';
 import AddDoctor from '../add_doctor/AddDoctor';
 import Home from '../home/Home';
-import Reserve from '../reserve/Reserve';
 import Reservations from '../reservations/Reservations';
+import ReservationForm from '../reserve/Reserve';
 import DeleteDoctor from '../delete_doctor/DeleteDoctor';
 import { loadStorage } from '../../../storage/storage';
+import { fetchDoctors } from '../../../redux/doctors/DoctorList';
 
 const MainPageCtn = styled.div`
   @media (min-width: 768px) {
@@ -29,11 +31,13 @@ const MainPageCtn = styled.div`
 
 function MainPage() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!loadStorage()) {
       navigate('/login');
     }
+    dispatch(fetchDoctors());
   }, []);
 
   return (
@@ -42,7 +46,7 @@ function MainPage() {
       <div className="right">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="reserve" element={<Reserve />} />
+          <Route path="reserve" element={<ReservationForm />} />
           <Route path="reservations" element={<Reservations />} />
           <Route path="add_doctor" element={<AddDoctor />} />
           <Route path="delete_doctor" element={<DeleteDoctor />} />
