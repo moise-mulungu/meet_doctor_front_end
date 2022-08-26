@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { getUserDoctors, removeDoctor } from '../../../redux/doctors/doctor';
+import { getUserDoctors, removeDoctor } from '../../../redux/doctors/doctorDelete';
 
 const DeleteDoctorCtn = styled.div`
 
@@ -119,7 +119,7 @@ const DeleteDoctorCtn = styled.div`
 `;
 
 function DeleteDoctor() {
-  const doctors = useSelector((state) => state.doctor);
+  const doctors = useSelector((state) => state.deleteDoctor);
   const dispatch = useDispatch();
 
   let removeButton = null;

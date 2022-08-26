@@ -84,14 +84,14 @@ function AddDoctor() {
     e.preventDefault();
   };
 
-  const updateInput = (e) => {
-    console.log(e);
+  const updateInput = () => {
+    // console.log(e);
   };
 
-  const checkImage = (e) => {
+  const checkImage = () => {
     // const image = document.getElementById('doc-image');
     // const base64 = getBase
-    console.log(e.currentTarget);
+    // console.log(e.currentTarget);
   };
 
   return (
@@ -111,7 +111,6 @@ function AddDoctor() {
           type="file"
           name="myImage"
           onChange={(event) => {
-            console.log(event.target.files[0]);
             setSelectedImage(event.target.files[0]);
           }}
         />
