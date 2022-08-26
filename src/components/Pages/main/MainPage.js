@@ -3,7 +3,7 @@ import {
   Route, Routes, useNavigate,
 } from 'react-router-dom';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import Sidebar from '../../Sidebar';
 import AddDoctor from '../add_doctor/AddDoctor';
 import Home from '../home/Home';
@@ -12,7 +12,7 @@ import ListAllReservations from '../reservations/Reservation';
 import ReservationForm from '../reserve/Reserve';
 import DeleteDoctor from '../delete_doctor/DeleteDoctor';
 import { loadStorage } from '../../../storage/storage';
-import { fetchDoctors } from '../../../redux/doctors/DoctorList';
+// import { fetchDoctors } from '../../../redux/doctors/DoctorList';
 
 const MainPageCtn = styled.div`
   @media (min-width: 768px) {
@@ -32,13 +32,13 @@ const MainPageCtn = styled.div`
 
 function MainPage() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     if (!loadStorage()) {
       navigate('/login');
     }
-    dispatch(fetchDoctors());
+    // dispatch(fetchDoctors());
   }, []);
 
   return (
