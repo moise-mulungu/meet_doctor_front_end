@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { updateStorage } from '../storage/storage';
 
 const SidebarCtn = styled.div`
   @media (min-width: 768px) {
@@ -42,15 +43,28 @@ const SidebarCtn = styled.div`
         }
       }
     }
-    
-    .logout > h5{
+    .logout {
+      display: flex;
+      justify-content: center;
+    }
+    .logout > button{
       text-align: center;
       color: var(--red);
+      cursor: pointer;
+      border: none;
+      background: var(--white-sobber);
     }
   }
 `;
 
 function Sidebar() {
+  const navigate = useNavigate();
+
+  const disconnect = () => {
+    updateStorage(null);
+    navigate('/login');
+  };
+
   return (
     <SidebarCtn>
       <div className="logo">
@@ -64,7 +78,7 @@ function Sidebar() {
         <Link to="/delete_doctor">Delete Doctor</Link>
       </div>
       <div className="logout">
-        <h5>disconnect</h5>
+        <button type="button" onKeyDown={disconnect} onClick={disconnect}>disconnect</button>
       </div>
     </SidebarCtn>
   );

@@ -75,6 +75,9 @@ const DoctorDetailsCtn = styled.div`
       cursor: pointer;
       transition: all 300ms linear 0s;
       margin-top: 50px;
+      :hover{
+        background-color: var(--green-darker);
+      }
     }
   }
 `;
