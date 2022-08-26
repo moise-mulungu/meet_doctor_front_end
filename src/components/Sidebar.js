@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { updateStorage } from '../storage/storage';
 
 const SidebarCtn = styled.div`
   @media (min-width: 768px) {
@@ -57,8 +58,11 @@ const SidebarCtn = styled.div`
 `;
 
 function Sidebar() {
-  const disconnect = () => {
+  const navigate = useNavigate();
 
+  const disconnect = () => {
+    updateStorage(null);
+    navigate('/login');
   };
 
   return (
