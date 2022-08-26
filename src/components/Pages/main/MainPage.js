@@ -7,7 +7,8 @@ import { useDispatch } from 'react-redux';
 import Sidebar from '../../Sidebar';
 import AddDoctor from '../add_doctor/AddDoctor';
 import Home from '../home/Home';
-import Reservations from '../reservations/Reservations';
+import Reserve from '../reserve/Reserve';
+import ListAllReservations from '../reservations/Reservation';
 import ReservationForm from '../reserve/Reserve';
 import DeleteDoctor from '../delete_doctor/DeleteDoctor';
 import { loadStorage } from '../../../storage/storage';
@@ -46,9 +47,9 @@ function MainPage() {
       <div className="right">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="reserve" element={<Reserve />} />
           <Route path="reserve" element={<ReservationForm />} />
-
-          <Route path="reservations" element={<Reservations />} />
+          <Route path="reservations" element={<ListAllReservations />} />
           <Route path="add_doctor" element={<AddDoctor />} />
           <Route path="delete_doctor" element={<DeleteDoctor />} />
 
