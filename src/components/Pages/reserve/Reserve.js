@@ -12,7 +12,7 @@ const ReservationForm = () => {
   /* eslint-disable */
    const { register, handleSubmit } = useForm();
    /* eslint-disable */
-  const onSubmit = (data) => (dispatch(createReservation(data)) ? navigate('/main') : null);
+  const onSubmit = (data) => (dispatch(createReservation(data)) ? navigate('/reservations') : null);
   return (
 
     

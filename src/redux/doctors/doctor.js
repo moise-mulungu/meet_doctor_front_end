@@ -43,7 +43,6 @@ export const getDoctors = () => async (dispatch) => {
     .catch((error) => {
       throw error;
     });
-  console.log(doctors);
   dispatch(doctorsList(doctors));
 };
 
