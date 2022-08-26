@@ -6,7 +6,7 @@
 - Redux
 
 ## Live Demo
-Visit live demo [here](COMING SOON...)
+COMING SOON...
 
 ## installation
 
