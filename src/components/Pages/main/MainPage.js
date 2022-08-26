@@ -52,6 +52,7 @@ function MainPage() {
           <Route path="reservations" element={<ListAllReservations />} />
           <Route path="add_doctor" element={<AddDoctor />} />
           <Route path="delete_doctor" element={<DeleteDoctor />} />
+
         </Routes>
       </div>
     </MainPageCtn>
