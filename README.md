@@ -21,7 +21,7 @@ To get a local copy up and running follow these simple example steps.
 - Run the app
   ``` npm start ```
 
-# Author
+# Authors
 
 👤 **Cedric Kossi**
 
