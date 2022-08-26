@@ -47,9 +47,11 @@ function MainPage() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="reserve" element={<ReservationForm />} />
+
           <Route path="reservations" element={<Reservations />} />
           <Route path="add_doctor" element={<AddDoctor />} />
           <Route path="delete_doctor" element={<DeleteDoctor />} />
+
         </Routes>
       </div>
     </MainPageCtn>
