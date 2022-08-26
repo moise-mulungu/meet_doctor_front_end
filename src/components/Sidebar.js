@@ -42,15 +42,25 @@ const SidebarCtn = styled.div`
         }
       }
     }
-    
-    .logout > h5{
+    .logout {
+      display: flex;
+      justify-content: center;
+    }
+    .logout > button{
       text-align: center;
       color: var(--red);
+      cursor: pointer;
+      border: none;
+      background: var(--white-sobber);
     }
   }
 `;
 
 function Sidebar() {
+  const disconnect = () => {
+
+  };
+
   return (
     <SidebarCtn>
       <div className="logo">
@@ -64,7 +74,7 @@ function Sidebar() {
         <Link to="/delete_doctor">Delete Doctor</Link>
       </div>
       <div className="logout">
-        <h5>disconnect</h5>
+        <button type="button" onKeyDown={disconnect} onClick={disconnect}>disconnect</button>
       </div>
     </SidebarCtn>
   );
