@@ -100,7 +100,7 @@ function AddDoctor() {
         {selectedImage && (
         <div>
           {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
-          <img id="doc-image" alt="not fount" onKeyDown={checkImage} onClick={checkImage} src={URL.createObjectURL(selectedImage)} />
+          <img id="doc-image" className="doc-image" alt="not fount" onKeyDown={checkImage} onClick={checkImage} src={URL.createObjectURL(selectedImage)} />
           <br />
           <button className="remove-img" type="button" onClick={() => setSelectedImage(null)}>Remove</button>
         </div>
