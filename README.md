@@ -29,6 +29,16 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@kosherus](https://twitter.com/kosherus)
 - LinkedIn: [Lionel Cedric KOSSI](https://linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172)
 
+👤 **Samiullah Bahadur**
+- GitHub: [@bahadur](https://github.com/samiullahbahadur)
+- Twitter: [@bahadur](https://twitter.com/bushera_mestofa)
+- LinkedIn: [@bahadur](https://www.linkedin.com/in/samiullah-bahadur/)
+
+👤 **Moïse Mulungu**
+- GitHub: [@Moïse Mulungu](https://github.com/moise-mulungu)
+- Twitter: [@Moïse Mulungu](https://twitter.com/moise_mulungu)
+- LinkedIn: [Moïse (Musa) Mulungu](https://www.linkedin.com/in/moisemulungu/)
+
 ## :handshake: Contributing
 Contributions, issues, and feature requests are welcome!
 ## Show your support
