@@ -78,14 +78,24 @@ const AddDoctorCtn = styled.div`
   }
 `;
 function AddDoctor() {
+  const [inputValues, setInputValues] = useState({
+    name: '',
+    speciality: '',
+    cost: '',
+    location: '',
+  });
   const [selectedImage, setSelectedImage] = useState(null);
 
   const submitLogin = (e) => {
     e.preventDefault();
+    console.log(inputValues)
   };
 
-  const updateInput = () => {
-    // console.log(e);
+  const updateInput = (e) => {
+    setInputValues({
+      ...inputValues,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const checkImage = () => {
@@ -116,19 +126,19 @@ function AddDoctor() {
         <form onSubmit={submitLogin}>
           <label htmlFor="name">
             Name:
-            <input className="username_field" id="username" placeholder="Name" name="username" onChange={updateInput} />
+            <input className="username_field" id="username" required='true' placeholder="Name" name="name" onChange={updateInput} />
           </label>
           <label htmlFor="speciality">
             Speciality:
-            <input className="username_field" id="username" placeholder="Speciality" name="username" onChange={updateInput} />
+            <input className="username_field" id="username" required='true' placeholder="Speciality" name="speciality" onChange={updateInput} />
           </label>
           <label htmlFor="cost">
             Cost:
-            <input className="username_field" type="number" id="username" placeholder="Cost/h" name="username" onChange={updateInput} />
+            <input className="username_field" type="number" id="username" required='true' placeholder="Cost/h" name="cost" onChange={updateInput} />
           </label>
           <label htmlFor="location">
             Location:
-            <input className="username_field" id="username" placeholder="Location" name="username" onChange={updateInput} />
+            <input className="username_field" id="username" required='true' placeholder="Location" name="location" onChange={updateInput} />
           </label>
           <input className="create-button" type="submit" value="Create doctor" />
         </form>
