@@ -33,8 +33,8 @@ const ReservationForm = () => {
                             <lable >Select a doctor</lable>
                             </lable>
 
-                                    <input {...register('datetime')} type="date"   />
-                                <input {...register('city')} type="text" placeholder="City" className='city'/>
+                                    <input {...register('datetime')} type="date"  required  />
+                                <input {...register('city')} type="text" placeholder="City" className='city' required/>
 
                                 <select {...register('doctor_id')} >
 
