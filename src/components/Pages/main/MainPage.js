@@ -12,7 +12,8 @@ import ListAllReservations from '../reservations/Reservation';
 import ReservationForm from '../reserve/Reserve';
 import DeleteDoctor from '../delete_doctor/DeleteDoctor';
 import { loadStorage } from '../../../storage/storage';
-// import { fetchDoctors } from '../../../redux/doctors/DoctorList';
+import { fetchDoctors } from '../../../redux/doctors/DoctorList';
+import {useDispatch} from "react-redux";
 
 const MainPageCtn = styled.div`
   @media (min-width: 768px) {
@@ -32,13 +33,13 @@ const MainPageCtn = styled.div`
 
 function MainPage() {
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!loadStorage()) {
       navigate('/login');
     }
-    // dispatch(fetchDoctors());
+    dispatch(fetchDoctors());
   }, []);
 
   return (

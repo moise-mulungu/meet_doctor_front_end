@@ -146,23 +146,23 @@ function AddDoctor() {
         <form onSubmit={submitLogin}>
           <label htmlFor="name">
             Name:
-            <input className="username_field" id="username" required='true' placeholder="Name" name="name" value={inputValues.name} onChange={updateInput} />
+            <input className="username_field" id="username" required= {true} placeholder="Name" name="name" value={inputValues.name} onChange={updateInput} />
           </label>
           <label htmlFor="email">
             Email:
-            <input className="username_field" type="email" id="username" required='true' placeholder="Email" value={inputValues.email} name="email" onChange={updateInput} />
+            <input className="username_field" type="email" id="username" required= {true} placeholder="Email" value={inputValues.email} name="email" onChange={updateInput} />
           </label>
           <label htmlFor="speciality">
             Speciality:
-            <input className="username_field" id="username" required='true' placeholder="Speciality" value={inputValues.speciality} name="speciality" onChange={updateInput} />
+            <input className="username_field" id="username" required= {true} placeholder="Speciality" value={inputValues.speciality} name="speciality" onChange={updateInput} />
           </label>
           <label htmlFor="cost">
             Cost:
-            <input className="username_field" type="number" id="username" required='true' placeholder="Cost/h" value={inputValues.cost} name="cost" onChange={updateInput} />
+            <input className="username_field" type="number" id="username" required= {true} placeholder="Cost/h" value={inputValues.cost} name="cost" onChange={updateInput} />
           </label>
           <label htmlFor="location">
             Location:
-            <input className="username_field" id="username" required='true' placeholder="Location" value={inputValues.location} name="location" onChange={updateInput} />
+            <input className="username_field" id="username" required= {true} placeholder="Location" value={inputValues.location} name="location" onChange={updateInput} />
           </label>
           <input className="create-button" type="submit" value="Create doctor" />
         </form>
