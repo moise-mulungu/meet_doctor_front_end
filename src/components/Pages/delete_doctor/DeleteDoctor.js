@@ -118,6 +118,13 @@ const DeleteDoctorCtn = styled.div`
   .conf-ctn {
     display: none;
   }
+  .no-doc-ctn{
+    display: flex;
+    justify-content: center;
+  }
+  .no-doc{
+    align-content: center;
+  }
 `;
 
 function DeleteDoctor() {
@@ -154,7 +161,7 @@ function DeleteDoctor() {
   return (
     <DeleteDoctorCtn>
       {
-        doctors && (
+        doctors.length !== 0 ? (
         <div className="doc-list-ctn">
           {
             doctors.map((doc) => (
@@ -176,7 +183,9 @@ function DeleteDoctor() {
             ))
           }
         </div>
-        )
+        ) : <div className="no-doc-ctn">
+          <h5 className="no-doc">No doctor !</h5>
+        </div>
       }
     </DeleteDoctorCtn>
   );
