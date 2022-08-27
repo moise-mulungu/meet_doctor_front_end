@@ -1,4 +1,5 @@
 import { loadStorage } from '../../storage/storage';
+import {BASE_URL} from "../../url_config";
 
 const RESERVAIONT_DOCTOR = 'MeetDoctorFrontEnd/User/RESERVAIONT_DOCTOR';
 const initialState = { status: 'status null', data: [] };
@@ -10,7 +11,7 @@ export const registerSuccess = (reserve) => ({
 
 export const createReservation = (data) => async (dispatch) => {
   const user = loadStorage();
-  fetch(`http://127.0.0.1:3000/v1/users/${user.id}/reservations`, {
+  fetch(`${BASE_URL}/v1/users/${user.id}/reservations`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
