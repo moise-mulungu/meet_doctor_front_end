@@ -42,16 +42,13 @@ export const postDoctor = (doctor) => async (dispatch) => {
       bill: doctor.cost,
       image: "doctor.image",
       location: doctor.location,
-      // email: doctor.email,
+      email: doctor.email,
     }),
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
     },
   })
-    .then((res) => {
-      res.json()
-      console.log('love')
-    })
+    .then((res) => res.json())
     .catch((error) => {
       throw error;
     });
