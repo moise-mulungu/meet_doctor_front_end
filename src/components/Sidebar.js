@@ -73,7 +73,7 @@ function Sidebar() {
       <div className="links">
         <Link to="/">Doctors</Link>
         <Link to="/reserve">Reserve</Link>
-        <Link to="/reservations">Add Reservations</Link>
+        <Link to="/reservations">Reservations</Link>
         <Link to="/add_doctor">Add Doctor</Link>
         <Link to="/delete_doctor">Delete Doctor</Link>
       </div>

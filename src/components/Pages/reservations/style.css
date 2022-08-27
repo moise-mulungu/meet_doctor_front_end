@@ -17,11 +17,12 @@
 .reservations-table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 95vw;
+  width: 90%;
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: white;
+  border: 20px;
 }
 
 .reservations-table td {

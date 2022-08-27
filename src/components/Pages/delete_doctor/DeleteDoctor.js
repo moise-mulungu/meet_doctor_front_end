@@ -8,12 +8,14 @@ const DeleteDoctorCtn = styled.div`
   .doc-list-ctn {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     padding: 15px;
     gap: 30px;
   }
 
   .doc-ctn {
     display: flex;
+    padding: 10px;
     flex-direction: column;
     justify-content: center;
   }

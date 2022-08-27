@@ -3,7 +3,7 @@ import {
   Route, Routes, useNavigate,
 } from 'react-router-dom';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import Sidebar from '../../Sidebar';
 import AddDoctor from '../add_doctor/AddDoctor';
 import Home from '../home/Home';
@@ -13,6 +13,7 @@ import ReservationForm from '../reserve/Reserve';
 import DeleteDoctor from '../delete_doctor/DeleteDoctor';
 import { loadStorage } from '../../../storage/storage';
 import { fetchDoctors } from '../../../redux/doctors/DoctorList';
+import {useDispatch} from "react-redux";
 
 const MainPageCtn = styled.div`
   @media (min-width: 768px) {

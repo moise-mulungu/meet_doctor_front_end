@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import {postDoctor} from "../../../redux/doctors/doctor";
+import {useDispatch} from "react-redux";
 
 const AddDoctorCtn = styled.div`
   height: 100%;
@@ -13,9 +15,18 @@ const AddDoctorCtn = styled.div`
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 14px 80px rgba(34, 35, 58, 0.2);
     margin: 25px 0;
-    padding: 40px 55px 45px 55px;
+    padding: 10px 55px 45px 55px;
     border-radius: 15px;
     transition: all 0.3s;
+  }
+  .img-select-ctn{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .img-select-ctn button{
+    height: fit-content;
+    margin: auto auto auto 10px;
   }
 
   .remove-img {
@@ -32,8 +43,8 @@ const AddDoctorCtn = styled.div`
 
   .doc-image {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 
   form {
@@ -78,14 +89,33 @@ const AddDoctorCtn = styled.div`
   }
 `;
 function AddDoctor() {
+  const dispatch = useDispatch()
+  const [inputValues, setInputValues] = useState({
+    name: '',
+    speciality: '',
+    cost: '',
+    location: '',
+    email: '',
+  });
   const [selectedImage, setSelectedImage] = useState(null);
 
   const submitLogin = (e) => {
     e.preventDefault();
+    dispatch(postDoctor(inputValues))
+    setInputValues({
+      name: '',
+      speciality: '',
+      cost: '',
+      location: '',
+      email: '',
+    })
   };
 
-  const updateInput = () => {
-    // console.log(e);
+  const updateInput = (e) => {
+    setInputValues({
+      ...inputValues,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const checkImage = () => {
@@ -98,7 +128,7 @@ function AddDoctor() {
     <AddDoctorCtn>
       <div className="form-ctn">
         {selectedImage && (
-        <div>
+        <div className="img-select-ctn">
           <img id="doc-image" className="doc-image" alt="not fount" onKeyDown={checkImage} onClick={checkImage} src={URL.createObjectURL(selectedImage)} />
           <br />
           <button className="remove-img" type="button" onClick={() => setSelectedImage(null)}>Remove</button>
@@ -116,19 +146,23 @@ function AddDoctor() {
         <form onSubmit={submitLogin}>
           <label htmlFor="name">
             Name:
-            <input className="username_field" id="username" placeholder="Name" name="username" onChange={updateInput} />
+            <input className="username_field" id="username" required= {true} placeholder="Name" name="name" value={inputValues.name} onChange={updateInput} />
+          </label>
+          <label htmlFor="email">
+            Email:
+            <input className="username_field" type="email" id="username" required= {true} placeholder="Email" value={inputValues.email} name="email" onChange={updateInput} />
           </label>
           <label htmlFor="speciality">
             Speciality:
-            <input className="username_field" id="username" placeholder="Speciality" name="username" onChange={updateInput} />
+            <input className="username_field" id="username" required= {true} placeholder="Speciality" value={inputValues.speciality} name="speciality" onChange={updateInput} />
           </label>
           <label htmlFor="cost">
             Cost:
-            <input className="username_field" type="number" id="username" placeholder="Cost/h" name="username" onChange={updateInput} />
+            <input className="username_field" type="number" id="username" required= {true} placeholder="Cost/h" value={inputValues.cost} name="cost" onChange={updateInput} />
           </label>
           <label htmlFor="location">
             Location:
-            <input className="username_field" id="username" placeholder="Location" name="username" onChange={updateInput} />
+            <input className="username_field" id="username" required= {true} placeholder="Location" value={inputValues.location} name="location" onChange={updateInput} />
           </label>
           <input className="create-button" type="submit" value="Create doctor" />
         </form>

@@ -74,7 +74,10 @@ const Doctors = () => {
           </div>
         ))
       }
-      <DoctorDetails detailsOpen={detailsOpen} doctor={doctor} />
+      {
+        doctor && <DoctorDetails detailsOpen={detailsOpen} doctor={doctor} />
+
+      }
     </DoctorsCtn>
   );
 };
