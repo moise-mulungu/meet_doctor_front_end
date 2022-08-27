@@ -56,7 +56,7 @@ const Doctors = () => {
   return (
     <DoctorsCtn>
       {
-        doctors.map((doctor) => (
+        doctors.length !== 0 ? doctors.map((doctor) => (
           <div
             key={doctor.id}
             className="doc-ctn"
@@ -72,7 +72,9 @@ const Doctors = () => {
               cost={doctor.bill}
             />
           </div>
-        ))
+        )) : <div>
+          <h5>No doctor !</h5>
+        </div>
       }
       {
         doctor && <DoctorDetails detailsOpen={detailsOpen} doctor={doctor} />
