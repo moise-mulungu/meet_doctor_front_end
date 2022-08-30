@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListAllReservations renders correctly 1`] = `
+<section
+  className="reservations-container"
+>
+  <h1>
+    All Reservations
+  </h1>
+  <table
+    className="reservations-table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Doctor
+        </th>
+        <th>
+          City
+        </th>
+        <th>
+          Bill
+        </th>
+        <th>
+          Date
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="reservations-body"
+    >
+      <tr>
+        <td>
+          Doctor
+        </td>
+        <td>
+          City
+        </td>
+        <td>
+          Bill
+        </td>
+        <td>
+          Date
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+`;

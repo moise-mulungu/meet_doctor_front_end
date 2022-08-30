@@ -31,6 +31,7 @@ exports[`Check if Reserve page renders correctly 1`] = `
           name="datetime"
           onBlur={[Function]}
           onChange={[Function]}
+          required={true}
           type="date"
         />
         <input
@@ -39,6 +40,7 @@ exports[`Check if Reserve page renders correctly 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           placeholder="City"
+          required={true}
           type="text"
         />
         <select
