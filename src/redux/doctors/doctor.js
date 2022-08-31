@@ -32,7 +32,7 @@ export const getDoctors = () => async (dispatch) => {
   dispatch(doctorsList(doctors));
 };
 
-export const postDoctor = (doctor) => async (dispatch) => {
+export const postDoctor = (doctor) => async () => {
   const url = CREATE_DOCTOR_URL(user.id)
   await fetch(url, {
     method: 'POST',

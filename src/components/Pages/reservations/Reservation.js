@@ -5,7 +5,6 @@ import './style.css'
 
 const ListAllReservations = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
   const data = useSelector((state) => state.reservation.reservations);
   console.log(data);
 

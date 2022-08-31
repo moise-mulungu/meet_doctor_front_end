@@ -1,4 +1,5 @@
 import { loadStorage } from "../../storage/storage";
+import {BASE_URL} from "../../url_config";
 
 const FETCH_RESERVATIONS = 'GetReservation/reservation/FETCH_RESERVATIONS';
 const initialState = {
@@ -31,7 +32,7 @@ export const fetchReservationsAsync = () => {
     if (user === null) {
       return dispatch(fetchReservationsFailure('No user found'));
     }
-    return fetch(`http://127.0.0.1:3000/v1/users/${user.id}/reservations`)
+    return fetch(`${BASE_URL}/v1/users/${user.id}/reservations`)
       .then(response => response.json())
       .then(reservations => {
         dispatch(fetchReservationsSuccess(reservations));
@@ -48,7 +49,7 @@ export const updateReservation = (reservation) => {
     if (user === null) {
       return dispatch(fetchReservationsFailure('No user found'));
     }
-    return fetch(`http://127.0.0.1:3000/v1/users/${user.id}/reservations`, {
+    return fetch(`${BASE_URL}/v1/users/${user.id}/reservations`, {
       method: 'GET',
       body: JSON.stringify(reservation)
     }).then(response => response.json())

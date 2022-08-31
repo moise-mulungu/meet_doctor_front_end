@@ -1,4 +1,4 @@
-// import { loadStorage } from '../../storage/storage';
+import {BASE_URL} from "../../url_config";
 
 const FETCH_DOCTOR = 'HotelAgentFrontEnd/MostRecent/FETCH_DOCTOR';
 const initialState = { status: 'Not Fetched', data: [] };
@@ -9,7 +9,7 @@ export const success = (mostRecent) => ({
 });
 
 export const fetchDoctors = () => async (dispatch) => {
-  fetch('http://127.0.0.1:3000/v1/doctors')
+  fetch(`${BASE_URL}/v1/doctors`)
     .then((data) => data.json())
     .then((data) => {
       dispatch(success(data));

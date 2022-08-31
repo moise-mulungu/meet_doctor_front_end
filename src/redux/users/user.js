@@ -21,7 +21,7 @@ export const loginUser = (username) => async (dispatch) => {
     .catch((error) => {
       throw error;
     });
-  const user = userRes.content.user[0];
+  const user = userRes.content.user;
   updateStorage(user);
   dispatch(logUser(userRes));
 };
