@@ -10,8 +10,9 @@
 .reservations-container h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #000;
+  color: #4caf50;
   margin-bottom: 1rem;
+  font-style: italic;
 }
 
 .reservations-table {
