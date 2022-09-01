@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import {postDoctor} from "../../../redux/doctors/doctor";
 import {useDispatch} from "react-redux";
@@ -19,12 +19,14 @@ const AddDoctorCtn = styled.div`
     border-radius: 15px;
     transition: all 0.3s;
   }
-  .img-select-ctn{
+
+  .img-select-ctn {
     display: flex;
     justify-content: center;
     gap: 20px;
   }
-  .img-select-ctn button{
+
+  .img-select-ctn button {
     height: fit-content;
     margin: auto auto auto 10px;
   }
@@ -88,28 +90,54 @@ const AddDoctorCtn = styled.div`
     }
   }
 `;
+
 function AddDoctor() {
   const dispatch = useDispatch()
+  const [imageBase64, setImageBase64] = useState('')
   const [inputValues, setInputValues] = useState({
     name: '',
     speciality: '',
     cost: '',
     location: '',
     email: '',
+    image: imageBase64,
   });
   const [selectedImage, setSelectedImage] = useState(null);
 
   const submitLogin = (e) => {
     e.preventDefault();
+    setInputValues({
+      ...inputValues,
+      image: imageBase64
+    })
+    if (inputValues.image === ""){
+      return
+    }
+    console.log(inputValues)
     dispatch(postDoctor(inputValues))
+    setImageBase64('')
     setInputValues({
       name: '',
       speciality: '',
       cost: '',
       location: '',
       email: '',
+      image: imageBase64,
     })
+    setSelectedImage('')
   };
+
+  const getBase64 = (file, cb) => {
+    let reader = new FileReader();
+    console.log(file)
+    reader.readAsDataURL(file)
+    reader.onload = function () {
+      cb(reader.result)
+    }
+    reader.onerror = function (error) {
+      console.log('Error: ', error)
+    }
+  }
 
   const updateInput = (e) => {
     setInputValues({
@@ -118,53 +146,58 @@ function AddDoctor() {
     });
   };
 
-  const checkImage = () => {
-    // const image = document.getElementById('doc-image');
-    // const base64 = getBase
-    // console.log(e.currentTarget);
-  };
-
   return (
     <AddDoctorCtn>
       <div className="form-ctn">
         {selectedImage && (
-        <div className="img-select-ctn">
-          <img id="doc-image" className="doc-image" alt="not fount" onKeyDown={checkImage} onClick={checkImage} src={URL.createObjectURL(selectedImage)} />
-          <br />
-          <button className="remove-img" type="button" onClick={() => setSelectedImage(null)}>Remove</button>
-        </div>
+          <div className="img-select-ctn">
+            <img id="doc-image" className="doc-image" alt="not fount"
+                 src={URL.createObjectURL(selectedImage)}/>
+            <br/>
+            <button className="remove-img" type="button" onClick={() => setSelectedImage(null)}>Remove</button>
+          </div>
         )}
-        <br />
+        <br/>
         <input
           className="add-img"
           type="file"
           name="myImage"
           onChange={(event) => {
+            console.log(event.target.files[0]);
             setSelectedImage(event.target.files[0]);
+            getBase64(event.target.files[0], (result) => {
+              console.log(result)
+              setImageBase64(result)
+            })
           }}
         />
-        <form onSubmit={submitLogin}>
+        <form onSubmit={(e) => submitLogin(e)}>
           <label htmlFor="name">
             Name:
-            <input className="username_field" id="username" required= {true} placeholder="Name" name="name" value={inputValues.name} onChange={updateInput} />
+            <input className="username_field" id="username" required={true} placeholder="Name" name="name"
+                   value={inputValues.name} onChange={updateInput}/>
           </label>
           <label htmlFor="email">
             Email:
-            <input className="username_field" type="email" id="username" required= {true} placeholder="Email" value={inputValues.email} name="email" onChange={updateInput} />
+            <input className="username_field" type="email" id="username" required={true} placeholder="Email"
+                   value={inputValues.email} name="email" onChange={updateInput}/>
           </label>
           <label htmlFor="speciality">
             Speciality:
-            <input className="username_field" id="username" required= {true} placeholder="Speciality" value={inputValues.speciality} name="speciality" onChange={updateInput} />
+            <input className="username_field" id="username" required={true} placeholder="Speciality"
+                   value={inputValues.speciality} name="speciality" onChange={updateInput}/>
           </label>
           <label htmlFor="cost">
             Cost:
-            <input className="username_field" type="number" id="username" required= {true} placeholder="Cost/h" value={inputValues.cost} name="cost" onChange={updateInput} />
+            <input className="username_field" type="number" id="username" required={true} placeholder="Cost/h"
+                   value={inputValues.cost} name="cost" onChange={updateInput}/>
           </label>
           <label htmlFor="location">
             Location:
-            <input className="username_field" id="username" required= {true} placeholder="Location" value={inputValues.location} name="location" onChange={updateInput} />
+            <input className="username_field" id="username" required={true} placeholder="Location"
+                   value={inputValues.location} name="location" onChange={updateInput}/>
           </label>
-          <input className="create-button" type="submit" value="Create doctor" />
+          <input className="create-button" type="submit" value="Create doctor"/>
         </form>
       </div>
     </AddDoctorCtn>

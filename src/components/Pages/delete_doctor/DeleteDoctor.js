@@ -173,7 +173,7 @@ function DeleteDoctor() {
                 <h5 className="doc-name">{doc.name}</h5>
                 <h5 className="doc-speciality">{doc.speciality}</h5>
                 <div className="but-action-ctn">
-                  <button id={`remove${doc.id}`} data-index={doc.id} className="rem-ctn" type="button" onClick={removeDoc}>Remove</button>
+                  <button id={`remove${doc.id}`} data-index={doc.id} className="rem-ctn" type="button" onClick={(e) => removeDoc(e)}>Remove</button>
                   <div id={`but-confirm${doc.id}`} data-index={doc.id} className="conf-ctn">
                     <button id={`cancel${doc.id}`} data-index={doc.id} className="cancel-but" type="button" onClick={cancelDoc}>Cancel</button>
                     <button id={`confirm${doc.id}`} data-index={doc.id} className="confirm-but" type="button" onClick={() => dispatch(removeDoctor(doc.id))}>Confirm</button>
