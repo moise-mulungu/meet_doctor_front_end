@@ -67,6 +67,7 @@ const Doctors = () => {
             role="presentation"
           >
             <Doctor
+              image={doctor.image}
               name={doctor.name}
               speciality={doctor.speciality}
               cost={doctor.bill}

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import React from "react";
 
 const DoctorCtn = styled.div`
   width: 350px;
@@ -18,9 +19,10 @@ const DoctorCtn = styled.div`
   }
 
   .doc-img {
-    width: 350px;
-    height: 350px;
-    position: absolute;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 100%;
   }
 
   .img-bg {
@@ -60,12 +62,16 @@ const DoctorCtn = styled.div`
 `;
 
 const Doctor = (props) => {
-  const { name, speciality, cost } = props;
+  const { name, speciality, cost, image } = props;
   return (
     <DoctorCtn>
       <div className="img-ctn">
-        <div className="img-bg" />
-        {/* <img alt="doctor" className="doc-img" /> */}
+        {
+          image === "" && <div className="img-bg" />
+        }
+        {
+          image !== "" && <img className="doc-img" src={image} alt="doctor"/>
+        }
       </div>
       <h5 className="doc-name">{name}</h5>
       <h5 className="doc-speciality">{speciality}</h5>
@@ -83,6 +89,7 @@ Doctor.propTypes = {
   name: PropTypes.string.isRequired,
   speciality: PropTypes.string.isRequired,
   cost: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default Doctor;

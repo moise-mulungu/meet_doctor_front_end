@@ -40,7 +40,7 @@ export const postDoctor = (doctor) => async () => {
       name: doctor.name,
       speciality: doctor.speciality,
       bill: doctor.cost,
-      image: "doctor.image",
+      image: doctor.image,
       location: doctor.location,
       email: doctor.email,
     }),
