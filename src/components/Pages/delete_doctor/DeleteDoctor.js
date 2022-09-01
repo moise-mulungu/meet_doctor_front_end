@@ -57,6 +57,13 @@ const DeleteDoctorCtn = styled.div`
     border-radius: 100%;
     background: var(--img-background);
   }
+  
+  .doc-img{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 100%;
+  }
 
   .but-action-ctn {
     display: flex;
@@ -167,8 +174,12 @@ function DeleteDoctor() {
             doctors.map((doc) => (
               <div className="doc-ctn" key={doc.id}>
                 <div className="img-ctn">
-                  <div className="img-bg" />
-                  {/* <img /> */}
+                  {
+                    doc.image === "" && <div className="img-bg" />
+                  }
+                  {
+                    doc.image !== "" && <img className="doc-img" src={doc.image} alt="doctor"/>
+                  }
                 </div>
                 <h5 className="doc-name">{doc.name}</h5>
                 <h5 className="doc-speciality">{doc.speciality}</h5>
