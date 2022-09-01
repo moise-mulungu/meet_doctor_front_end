@@ -15,7 +15,7 @@ const ListAllReservations = () => {
 
   return (
     <section className="reservations-container">
-      <h1>All Reservations</h1>
+      <h1>All_Reservations</h1>
       <table className="reservations-table">
         <thead>
           <tr>
