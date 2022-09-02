@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# Mee Doctor
+This application is based booking an appointment with prominent Doctors around the world, you need just to login then book a reservation, after that you can log out or check all your reservations.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Built with
+- React.js
+- Redux
 
-## Available Scripts
+## Live Demo
+[live](https://meet-a-doctor.netlify.app/)
 
-In the project directory, you can run:
 
-### `npm start`
+## Back-End
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Back-End-Link: [Back-End](https://github.com/moise-mulungu/meet_doctor_back_end)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## installation
 
-### `npm test`
+To get a local copy up and running follow these simple example steps.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- clone the repository by running
+  ``` https://github.com/moise-mulungu/meet_doctor_front_end.git ```
+- navigate to the folder
+  ``` cd <DIRECTORY> ```
+- Install packages
+  ``` npm i ```
+- Run the app
+  ``` npm start ```
 
-### `npm run build`
+# Authors
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+👤 **Cedric Kossi**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- GitHub: [@kosher9](https://github.com/kosher9)
+- Twitter: [@kosherus](https://twitter.com/kosherus)
+- LinkedIn: [Lionel Cedric KOSSI](https://linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+👤 **Samiullah Bahadur**
+- GitHub: [@bahadur](https://github.com/samiullahbahadur)
+- Twitter: [@bahadur](https://twitter.com/bushera_mestofa)
+- LinkedIn: [@bahadur](https://www.linkedin.com/in/samiullah-bahadur/)
 
-### `npm run eject`
+👤 **Moïse Mulungu**
+- GitHub: [@Moïse Mulungu](https://github.com/moise-mulungu)
+- Twitter: [@Moïse Mulungu](https://twitter.com/moise_mulungu)
+- LinkedIn: [Moïse (Musa) Mulungu](https://www.linkedin.com/in/moisemulungu/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## :handshake: Contributing
+Contributions, issues, and feature requests are welcome!
+## Show your support
+Give a :star:️ if you like this project!
+## Acknowledgments
+Design inspired by [Murat Korkmaz](https://www.behance.net/muratk), design: [Vespa](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Microverse offered guidance on how to make the project more professional
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📝 License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./LICENSE) licensed.

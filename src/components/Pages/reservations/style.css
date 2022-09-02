@@ -1,0 +1,61 @@
+.reservations-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.reservations-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.reservations-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: white;
+  border: 20px;
+}
+
+.reservations-table td {
+  border: 3px solid rgb(245, 241, 241);
+  padding: 12px;
+  text-align: center;
+}
+
+.reservations-table tr:nth-child(even) { background-color: #e4dede; }
+
+.reservations-table tr:hover { background-color: #4caf50; }
+
+.reservations-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4caf50;
+  color: white;
+  border: 3px solid rgb(245, 241, 241);
+}
+
+.back-button {
+  padding: 0.6rem;
+  border-radius: 5px;
+  background-color: rgb(185, 9, 9);
+  border: transparent;
+  color: #fff;
+  align-self: flex-start;
+  margin: 2.5rem;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #4caf50;
+}
