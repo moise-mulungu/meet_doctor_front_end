@@ -102,7 +102,7 @@ const DoctorDetails = (props) => {
   };
 
   return (
-    <DoctorDetailsCtn
+    <div className="DoctorDetailsCtn"
       detailsOpen={detailsOpen}
     >
       {
@@ -146,7 +146,7 @@ const DoctorDetails = (props) => {
         )
       }
 
-    </DoctorDetailsCtn>
+    </div>
   );
 };
 
