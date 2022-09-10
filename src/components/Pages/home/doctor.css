@@ -51,7 +51,7 @@
     color: var(--text-black);
   }
 
-  :hover {
+  .DoctorCtn:hover {
     cursor: pointer;
     background-color: rgba(227, 228, 227, 0.51);
     border-radius: 10px;
