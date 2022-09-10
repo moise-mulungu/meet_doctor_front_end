@@ -1,16 +1,15 @@
 @media (min-width: 768px) {
-    .MainPageCtn {
-
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .right{
-      background: var(--little-grey);
-      position: relative;
-      width: calc(100% - 200px);
-      height: 100%;
-    }
+  .MainPageCtn {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
   }
+
+  .right {
+    background: var(--little-grey);
+    position: relative;
+    width: calc(100% - 200px);
+    height: 100%;
+  }
+}

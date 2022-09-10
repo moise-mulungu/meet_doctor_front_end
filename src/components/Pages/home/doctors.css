@@ -5,9 +5,9 @@
   flex-direction: row;
   gap: 20px;
   justify-content: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
-.doc-ctn{
+.doc-ctn {
   width: 350px;
 }
