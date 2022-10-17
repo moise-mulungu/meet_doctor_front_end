@@ -14,7 +14,7 @@ import DeleteDoctor from '../delete_doctor/DeleteDoctor';
 import { loadStorage } from '../../../storage/storage';
 import { fetchDoctors } from '../../../redux/doctors/DoctorList';
 import {useDispatch} from "react-redux";
-import './mainPage.css';
+import './main_page.css';
 
 // const MainPageCtn = styled.div`
 //   @media (min-width: 768px) {

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../../../redux/users/user';
 import { loadStorage } from '../../../storage/storage';
 import logImgDoc from '../../../images/img_doc_login.jpg';
-import './loginPage.css';
+import './login_page.css';
 
 // const HomePageCtn = styled.div`
 //   @media (min-width: 768px) {

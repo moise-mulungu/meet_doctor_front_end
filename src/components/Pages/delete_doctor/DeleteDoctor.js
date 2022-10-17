@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { getUserDoctors, removeDoctor } from '../../../redux/doctors/doctorDelete';
-import './deleteDoctor.css';
+import './delete_doctor.css';
 
 // const DeleteDoctorCtn = styled.div`
 
