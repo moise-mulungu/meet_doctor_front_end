@@ -14,22 +14,23 @@ import DeleteDoctor from '../delete_doctor/DeleteDoctor';
 import { loadStorage } from '../../../storage/storage';
 import { fetchDoctors } from '../../../redux/doctors/DoctorList';
 import {useDispatch} from "react-redux";
+import './main_page.css';
 
-const MainPageCtn = styled.div`
-  @media (min-width: 768px) {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
+// const MainPageCtn = styled.div`
+//   @media (min-width: 768px) {
+//     width: 100vw;
+//     height: 100vh;
+//     display: flex;
+//     flex-direction: row;
     
-    .right{
-      background: var(--little-grey);
-      position: relative;
-      width: calc(100% - 200px);
-      height: 100%;
-    }
-  }
-`;
+//     .right{
+//       background: var(--little-grey);
+//       position: relative;
+//       width: calc(100% - 200px);
+//       height: 100%;
+//     }
+//   }
+// `;
 
 function MainPage() {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ function MainPage() {
   }, []);
 
   return (
-    <MainPageCtn>
+    <div className="MainPageCtn">
       <Sidebar />
       <div className="right">
         <Routes>
@@ -56,7 +57,7 @@ function MainPage() {
 
         </Routes>
       </div>
-    </MainPageCtn>
+    </div>
   );
 }
 

@@ -4,19 +4,20 @@ import React, { useEffect, useState } from 'react';
 import Doctor from './Doctor';
 import { getDoctors } from '../../../redux/doctors/doctor';
 import DoctorDetails from './DoctorDetails';
+import './doctors.css';
 
-const DoctorsCtn = styled.div`
-  width: 100%;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  .doc-ctn{
-    width: fit-content;
-  }
-`;
+// const DoctorsCtn = styled.div`
+//   width: 100%;
+//   margin-top: 30px;
+//   display: flex;
+//   flex-direction: row;
+//   gap: 20px;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   .doc-ctn{
+//     width: fit-content;
+//   }
+// `;
 
 const Doctors = () => {
   const dispatch = useDispatch();
@@ -54,7 +55,7 @@ const Doctors = () => {
   }, []);
 
   return (
-    <DoctorsCtn>
+    <div className="DoctorsCtn">
       {
         doctors.length !== 0 ? doctors.map((doctor) => (
           <div
@@ -81,7 +82,7 @@ const Doctors = () => {
         doctor && <DoctorDetails detailsOpen={detailsOpen} doctor={doctor} />
 
       }
-    </DoctorsCtn>
+    </div>
   );
 };
 

@@ -1,0 +1,13 @@
+.DoctorsCtn {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.doc-ctn {
+  width: 350px;
+}
